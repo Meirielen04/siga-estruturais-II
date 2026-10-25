@@ -10,13 +10,18 @@ public class Main {
         System.out.println("=== SIGA - Aula 11: Decorator e Composite (codigo inicial) ===");
 
         System.out.println();
-        System.out.println("1) Relatorios: uma subclasse por combinacao");
+        // System.out.println("1) Relatorios: uma subclasse por combinacao");
+        System.out.println("1) Relatorios com decoradores");
+        
+        Relatorio base = new RelatorioDeAlunos();
+        Relatorio numerado = new ComNumeracao(base);
+        Relatorio comCabecalho = new ComCabecalho(numerado);
+        Relatorio cabecalhoPrimeiro = new ComCabecalho(base);
+        Relatorio numeradoInvertido = new ComNumeracao(cabecalhoPrimeiro);
+        Relatorio comMarca = new ComMarcaDagua(comCabecalho);
         Relatorio[] variantes = {
-            new RelatorioDeAlunos(),
-            new RelatorioComCabecalho(),
-            new RelatorioComNumeracao(),
-            new RelatorioComCabecalhoENumeracao(),
-            new RelatorioComCabecalhoENumeracaoEMarcaDagua()
+            comCabecalho, comMarca, numeradoInvertido
+         
         };
         for (Relatorio r : variantes) {
             System.out.println("   --- " + r.getClass().getSimpleName() + " ---");
@@ -24,10 +29,10 @@ public class Main {
                 System.out.println("   " + linha);
             }
         }
-        System.out.println("   >> DESLIZE 1: sao 4 subclasses para 3 caracteristicas opcionais,");
-        System.out.println("      e faltam as combinacoes que ninguem pediu ainda. Com 3 opcionais");
-        System.out.println("      independentes seriam 8 classes; com 4, seriam 16.");
-        System.out.println("   >> DESLIZE 2: o texto do cabecalho esta escrito em TRES classes.");
+        // System.out.println("   >> DESLIZE 1: sao 4 subclasses para 3 caracteristicas opcionais,");
+        // System.out.println("      e faltam as combinacoes que ninguem pediu ainda. Com 3 opcionais");
+        // System.out.println("      independentes seriam 8 classes; com 4, seriam 16.");
+        // System.out.println("   >> DESLIZE 2: o texto do cabecalho esta escrito em TRES classes.");
 
         System.out.println();
         System.out.println("2) Estrutura curricular percorrida com instanceof");

@@ -54,6 +54,10 @@ Siga as etapas da ficha de atividade prática:
 4. **Criar o Composite.** Escreva a interface `ItemCurricular` com `getNome()`, `getCargaHoraria()` e `imprimir(int nivel)`. Faça `Disciplina` e `Modulo` a implementarem, com a coleção de `Modulo` passando a ser de `ItemCurricular`. A classe `GradeCurricular` deixa de existir: as operações passam a ser dos próprios itens.
 5. **Provar que funciona.** Acrescente um submódulo de **terceiro nível** (uma trilha de especialização dentro de um semestre) e verifique que nada no cliente precisou mudar.
 
+## Etapa 1 
+
+No código inicial, o relatório tem 4 subclasses, mas poderia chegar até 8, porque são dois estados por característica (presente e ausente), por isso 2³ = 8 combinações. Caso fosse 4 características, esse número multiplicaria para o dobro, 2⁴ = 16 combinações possíveis. 
+
 ## Critério de sucesso
 
 Ao final, verifique que: (a) o texto do cabeçalho existe em **um único lugar** do projeto; (b) três características opcionais são atendidas por **três** classes, e não por oito; (c) a palavra `instanceof` **não aparece** em nenhum arquivo; (d) a coleção de `Modulo` é de `ItemCurricular`, e não de `Object` nem de `Disciplina`; e (e) a carga horária total continua sendo **340h** antes de você acrescentar o terceiro nível.

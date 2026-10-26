@@ -46,8 +46,13 @@ public class Main {
         segundo.adicionar(new Disciplina("Tecnicas de Programacao II", 80));
         segundo.adicionar(new Disciplina("Desenvolvimento Web II", 80));
 
+        Modulo terceiro = new Modulo("Trilha de especializaçao");
+        terceiro.adicionar(new Disciplina("Matematica para Computaçao", 80));
+        terceiro.adicionar(new Disciplina("Design Digital", 80));
+
         curso.adicionar(primeiro);
         curso.adicionar(segundo);
+        segundo.adicionar(terceiro);
         curso.adicionar(new Disciplina("Projeto Integrador", 40));
 
         curso.imprimir(1);
